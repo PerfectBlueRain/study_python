@@ -11,7 +11,7 @@ Python week01 - class
 9. 다형성 
 10. 캡슐화
 ---
-
+---
 #Class
     class 클래스이름 (상속클래스)명 :
         def 클래스함수( self, [인수들...]):
@@ -24,4 +24,9 @@ Python week01 - class
     - def __del__(self): # 소멸자
     
 - 연산자오버로딩
+ ![test](../resource/img/week01_05_1.png)
+ ![test](../resource/img/week01_05_2.png)
     
+    - __coerce__ #자료형을 조정해 줌
+        def __coerce__(self, y): 
+            return self.n, y
