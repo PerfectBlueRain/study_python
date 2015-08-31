@@ -10,7 +10,7 @@ class Dog(Animal):
         print 'bark bark '
 
 class Duck(Animal):
-    def cry(self):cd
+    def cry(self):
         print 'duck duck'
 
 class Fish(Animal):
