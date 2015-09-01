@@ -13,7 +13,7 @@ class Life:
     def __del__(self):
         print 'Deathday', ctime()
 
-
+    
 mylife = Life()
 print 'sleeping for 3 sec'
 sleep(3)
