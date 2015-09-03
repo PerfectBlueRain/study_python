@@ -13,10 +13,12 @@
     - tuple : ( A, B, C, ) 리스트와 유사하지만 **읽기전용!**, 그만큼 제공되는 함수는 적어도 속도는 빠르다.
         - count(), index()
         - **파이썬내부에서는 튜플을 알게 모르게 사용하는 부분이 많다. 여러값을 다중할당하는 것에도 튜플이 생략되어있다.**
-            > a, b = 1, 2 <br>
-            > a, b = b, a  // swap <br>
-            > print(a, b)  <br>
-   
+         
+         ```{.python}
+            > a, b = 1, 2 
+            > a, b = b, a  // swap
+            > print(a, b)  
+         ```
     - dictionary : key&value쌍으로 구성
         - dict()생성자
         - items():모든 키와 값을 tuple로 묶어서 반환 / keys(), values()
