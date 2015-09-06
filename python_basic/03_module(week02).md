@@ -49,6 +49,7 @@ python setup. sdist
 python setup.py install
 ```
 - setup()의 매개변수
+
 name : 패키지 이름 (필수)
 version : 버전번호(필수)
 author : 저자이름

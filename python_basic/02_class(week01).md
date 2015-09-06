@@ -17,8 +17,17 @@ Python week01 - class
         def 클래스함수( self, [인수들...]):
         ...
 
-- self
-- staticmethod : 정적 메소드 인스턴스 객체 없이 클래스에서 직접 호출 가능
+- self : namespace 클래스객체 / 인스턴스 객체의 이름공간이 다르다, self는 현제 인스턴스의 객체를 가리키는 것, 이를 통해 인스턴스 객체의 이름공간에 접근하는 것
+
+- Naming Mangling
+    - _ : protected
+    - __ : private
+
+- static method : 정적 메소드 인스턴스 객체 없이 클래스에서 직접 호출 가능
+	- static method  
+- class method
+    - classmethod
+    
 - 생성자 & 소멸자 : 
     - def __init__(self): # 생성자
     - def __del__(self): # 소멸자
@@ -87,3 +96,6 @@ mySilly = Silly()
 mySilly.silly = "I'm calling getter"
 print(mySilly.silly)
 ```
+
+- 상속
+	- issubclass()
