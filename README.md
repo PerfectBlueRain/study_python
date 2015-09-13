@@ -12,4 +12,8 @@
 # python_Module
  - module basic
  
+
+# python_basic_web
+- socket
+ 
  
