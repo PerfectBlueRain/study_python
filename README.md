@@ -4,16 +4,16 @@
  - Function
  - Class
  - Module
- 
+
  - Exception Handling
  - I/O
- 
- 
+
+
 # python_Module
  - module basic
- 
+
 
 # python_basic_web
-- socket
- 
- 
+- network : socket, email, urllib
+- data : JSON, XML
+- server : OpenAPI, SMTP, WebServer

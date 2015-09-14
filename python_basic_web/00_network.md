@@ -85,53 +85,7 @@ print('Received', repr(data))
 >>> print data3
 {u'1': u'a', u'2': u'b'}
 ```
-- json파싱
 
-```{.python}
-config.json
-{
-      "snapshot" : {
-		"repos" : "mingnewbie.tistory.com/repositories/snapshots",
-		"userid" : "mingnewbie",
-		"passwd" : "1234"
-	},
-	"release" : {
-		"repos" : "mingnewbie.tistory.com/repositories/release",
-		"userid" : "mingnewbie",
-		"passwd" : "5678"
-	},
-	"component" : {
-		"test":"mingnewbie.tistory.com"
-	}
-}
-
-import json
-
-CONFIG_FILE="./config.json"
-CONFIG={}
-
-def readConfig(filename) :
-    f = open(filename, 'r')
-    js = json.loads(f.read())
-    f.close()
-    return js
-
-def main() :
-    global CONFIG_FILE
-    global CONFIG
-    CONFIG = readConfig(CONFIG_FILE)
-
-    repos = CONFIG['snapshot']['repos']
-    userid = CONFIG['snapshot']['userid']
-    pw = CONFIG['snapshot']['passwd']
-
-    print "repos value : " + repos
-    print "userid value : " + userid
-    print "pw value : " + pw
-
-if __name__ == "__main__":
-    main()
-```
 
 ### mailbox
 - 메일박스를 관리하는데 사용하수있는 모듈
@@ -141,6 +95,7 @@ if __name__ == "__main__":
 
 ### urllib
 - URL과 관련된 패키지. URL파싱, URL에 할당된 데이터를 가져오는 수집까지 여러가지 기능제공
+- http://kaspyx.kr/50
 
 ### cgi
 
