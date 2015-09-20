@@ -1,35 +1,25 @@
 # Web Server
+- BaseHTTPServer
+- SimpleHTTPServer
+- CGIHTTPServer
 
-#### BaseHTTPServer
-- 기반 서버 클래스용으로, HTTPServer 정의
-- 핸들러 클래스용으로, BaseHTTPRequestHndler 정의
-- 테스트용 웹 서버를 실행하는, test() 함수 정의
-- 기반클래스로, HTTP 프로토콜 처리
+![](http://drive.google.com/uc?export=view&id=0B0CgSzgDruziXzM0M2NYa3FNdjA)
+![](http://drive.google.com/uc?export=view&id=0B0CgSzgDruziQUZuTGxTRmhEb3M)
 
-#### SimpleHTTPServer
-- 기반 서버 클래스인 HTTPServer를 임포트하여 사용
-- 핸들러 클래스용으로, SimpleHTTPRequestHandler 정의
-- 테스트용 웹 서버를 실행하는, test() 함수 정의
-- GET과 HEAD 메소드 처리 가능
-
-#### CGIHTTPServer
-- 기반 서버 클래스인 HTTPServer를 임포트하여 사용
-- 핸들러 클래스용으로, CGIHTTPRequestHandler 정의
-- 테스트용 웹 서버를 실행하는 함수 test() 정의
-- POST와 CGI 처리
+---
 
 ---
 
 ## BaseHTTPServer
 - HTTPServer 객체를 생성할때 핸들을 지정
 - BaseHTTPRequestHndler 핸들 http의 기본적인 응답을 할 수 있는 기능이 들어있다.
-```
+```python
 class http.server.HTTPServer(server_address, RequestHandlerClass)
 ```
    - serve_forever() : 웹브라우저의 요청을 기다림, 요청이 들어오면 등록된 핸들러에 요청정보를 전달
    - do_GET() : GET요청이 들어오면 전달
 
-```
+```python
 class MyHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
