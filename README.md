@@ -1,5 +1,4 @@
 # python_basic
-
  - DataType
  - Function
  - Class
@@ -8,10 +7,8 @@
  - Exception Handling
  - I/O
 
-
 # python_Module
  - module basic
-
 
 # python_basic_web
 - network : socket, email, urllib
@@ -19,5 +16,5 @@
 - server : OpenAPI, SMTP, WebServer
 
 - WebProgramming
-   - client라이브러리 : 
-   - server라이브러리 :
+   - client라이브러리 : urlparse, urllib2, httplib
+   - server라이브러리 : BaseHTTPServer, SimpleHTTPServer, CGIHTTPServer

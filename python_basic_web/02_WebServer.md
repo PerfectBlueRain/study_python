@@ -18,39 +18,38 @@ class http.server.HTTPServer(server_address, RequestHandlerClass)
 ```
    - serve_forever() : 웹브라우저의 요청을 기다림, 요청이 들어오면 등록된 핸들러에 요청정보를 전달
    - do_GET() : GET요청이 들어오면 전달
+   ```python
+   class MyHandler(BaseHTTPRequestHandler):
 
-```python
-class MyHandler(BaseHTTPRequestHandler):
+       def do_GET(self):
+           from urllib.parse import urlparse
+           import sys
 
-    def do_GET(self):
-        from urllib.parse import urlparse
-        import sys
+           parts = urlparse(self.path)
+           keyword, value = parts.query.split('=',1)
 
-        parts = urlparse(self.path)
-        keyword, value = parts.query.split('=',1)
+           if keyword == "title" :
+               html = MakeHtmlDoc(SearchBookTitle(value)) # keyword에 해당하는 책을 검색해서 HTML로 전환합니다.
+               ##헤더 부분을 작성.
+               self.send_response(200)
+               self.send_header('Content-type', 'text/html')
+               self.end_headers()
+               self.wfile.write(html.encode('utf-8')) #  본분( body ) 부분을 출력 합니다.
+           else:
+               self.send_error(400,' bad requst : please check the your url') # 잘 못된 요청라는 에러를 응답한다.
 
-        if keyword == "title" :
-            html = MakeHtmlDoc(SearchBookTitle(value)) # keyword에 해당하는 책을 검색해서 HTML로 전환합니다.
-            ##헤더 부분을 작성.
-            self.send_response(200)
-            self.send_header('Content-type', 'text/html')
-            self.end_headers()
-            self.wfile.write(html.encode('utf-8')) #  본분( body ) 부분을 출력 합니다.
-        else:
-            self.send_error(400,' bad requst : please check the your url') # 잘 못된 요청라는 에러를 응답한다.
+   #####################################
 
-#####################################
+   def startWebService():
+       try:
+           server = HTTPServer( ('localhost',8080), MyHandler)
+           print("started http server....")
+           server.serve_forever()
 
-def startWebService():
-    try:
-        server = HTTPServer( ('localhost',8080), MyHandler)
-        print("started http server....")
-        server.serve_forever()
-
-    except KeyboardInterrupt:
-        print ("shutdown web server")
-        server.socket.close()  # server 종료합니다.
-```
+       except KeyboardInterrupt:
+           print ("shutdown web server")
+           server.socket.close()  # server 종료합니다.
+   ```
 
 
 ## SimpleHTTPServer
